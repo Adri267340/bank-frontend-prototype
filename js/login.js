@@ -16,7 +16,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const usuario = usuarios.find(user => user.correo === email && user.password === password);
 
   if (usuario) {
-    alert(`Inicio de sesión exitoso 🎉 Bienvenido/a ${usuario.nombre} 💖`);
+    alert(`Inicio de sesión exitoso Bienvenido/a ${usuario.nombre} 💖`);
     localStorage.setItem("usuarioActivo", JSON.stringify(usuario)); // Guarda sesión
     window.location.href = "index.html";
   } else {

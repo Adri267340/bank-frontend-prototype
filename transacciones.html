@@ -49,6 +49,11 @@
       <button onclick="window.location.href='index.html'">Salir</button>
     </div>
   </div>
+  <script>
+    document.querySelector("button[onclick*='index.html']").addEventListener("click", () => {
+      alert("Sesión cerrada exitosamente 🌸");
+    });
+  </script>
 
 </body>
 </html>

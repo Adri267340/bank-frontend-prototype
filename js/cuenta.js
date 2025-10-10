@@ -1,5 +1,5 @@
-// Aquí podrías recibir datos reales de la API si quieres.
-// Por ahora simula los datos del usuario logueado.
+// Aquí pouedo recibir datos reales de la API.
+// Por ahora simulo los datos del usuario logueado.
 
 document.addEventListener("DOMContentLoaded", () => {
   const usuario = {

@@ -1,4 +1,4 @@
-/* 🌸 ESTILOS GENERALES */
+/*ESTILOS GENERALES */
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #ffe6f2;
@@ -77,7 +77,7 @@ button:hover {
   text-decoration: underline;
 }
 
-/* 🌸 CONTENEDORES (CAJAS) */
+/*CONTENEDORES CAJAS*/
 .container {
   background-color: #fff;
   border-radius: 20px;
@@ -87,7 +87,7 @@ button:hover {
   text-align: center;
 }
 
-/* 🌸 LOGIN */
+/*LOGIN*/
 .login-container {
   background-color: #fff;
   border-radius: 20px;
@@ -97,7 +97,7 @@ button:hover {
   text-align: center;
 }
 
-/* 🌸 REGISTRO */
+/*REGISTRO*/
 .registro-container {
   background-color: #fff;
   border-radius: 20px;
@@ -107,7 +107,7 @@ button:hover {
   text-align: center;
 }
 
-/* 🌸 CUENTA */
+/*CUENTA*/
 .cuenta-container {
   background-color: #fff;
   border-radius: 20px;
@@ -131,7 +131,7 @@ button:hover {
   margin: 8px 0;
 }
 
-/* 🌸 TRANSACCIONES */
+/* TRANSACCIONES */
 .transacciones-container {
   background-color: #fff;
   border-radius: 20px;
@@ -180,7 +180,7 @@ tr:hover {
   flex: 1;
 }
 
-/* ===== ESTILOS LOGIN ===== */
+/*ESTILOS LOGIN*/
 .login-body {
   background-color: #ffe6f2;
   font-family: 'Poppins', sans-serif;
@@ -280,7 +280,7 @@ input:focus {
   text-decoration: underline;
 }
 
-/* ===== ESTILOS REGISTRO ===== */
+/*ESTILOS REGISTRO*/
 .registro-body {
   background-color: #ffe6f2;
   font-family: 'Poppins', sans-serif;
