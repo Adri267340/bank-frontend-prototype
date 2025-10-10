@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Banco Adri - Transacciones</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historial de Transacciones</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>BANCO ADRI</h1>
-    <h2>Hola, Adri</h2>
-    <p><b>Cuenta ahorros:</b> #12345</p>
 
-    <h3>Historial de Transacciones</h3>
+  <div class="transacciones-container">
+    <h1>Historial de Transacciones</h1>
+    <h2>Cuenta de Ahorros N° 1234567890</h2>
+
+    <div class="info-cuenta">
+      <p><strong>Titular:</strong> Adriana López</p>
+      <p><strong>Saldo actual:</strong> $2.500.000</p>
+    </div>
+
     <table>
       <thead>
         <tr>
@@ -22,14 +26,29 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>2025-10-05 12:33</td><td>Depósito</td><td>$100,000</td></tr>
-        <tr><td>2025-10-06 09:15</td><td>Retiro</td><td>$50,000</td></tr>
-        <tr><td>2025-10-07 11:50</td><td>Depósito</td><td>$200,000</td></tr>
+        <tr>
+          <td>2025-10-05</td>
+          <td>Depósito</td>
+          <td>$1.000.000</td>
+        </tr>
+        <tr>
+          <td>2025-10-06</td>
+          <td>Transferencia</td>
+          <td>$300.000</td>
+        </tr>
+        <tr>
+          <td>2025-10-08</td>
+          <td>Retiro</td>
+          <td>$200.000</td>
+        </tr>
       </tbody>
     </table>
 
-    <a href="cuenta.html" class="btn-secondary">Volver al inicio</a>
+    <div class="botones">
+      <button onclick="window.location.href='cuenta.html'">Volver</button>
+      <button onclick="window.location.href='index.html'">Salir</button>
+    </div>
   </div>
+
 </body>
 </html>
-

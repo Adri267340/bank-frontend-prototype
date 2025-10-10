@@ -1,6 +1,7 @@
+/* 🌸 ESTILOS GENERALES */
 body {
-  background-color: #ffe6f0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffe6f2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,129 +9,404 @@ body {
   margin: 0;
 }
 
-.container {
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  padding: 40px;
-  text-align: center;
-  width: 320px;
-}
-
 h1 {
-  color: #e75480;
+  color: #ff1493;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-.logo {
-  width: 80px;
-  margin: 10px auto;
+h2 {
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p {
+  color: #444;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 input {
-  display: block;
-  width: 90%;
-  margin: 10px auto;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-button, .btn, .btn-secondary {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-  text-decoration: none;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ff99cc;
+  border-radius: 25px;
+  outline: none;
+  text-align: center;
   font-size: 15px;
 }
 
-.btn {
-  background-color: #e75480;
+input::placeholder {
+  color: #aaa;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background-color: #ff1493;
   color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 15px;
 }
 
-.btn:hover {
-  background-color: #d0456c;
+button:hover {
+  background-color: #ff66b2;
 }
 
-.btn-secondary {
+.link {
+  margin-top: 15px;
+  display: block;
+  color: #444;
+  font-size: 14px;
+  text-align: center;
+}
+
+.link a {
+  color: #ff1493;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* 🌸 CONTENEDORES (CAJAS) */
+.container {
   background-color: #fff;
-  color: #e75480;
-  border: 1px solid #e75480;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.3);
+  width: 400px;
+  padding: 40px;
+  text-align: center;
 }
 
-.btn-secondary:hover {
-  background-color: #ffe6f0;
+/* 🌸 LOGIN */
+.login-container {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.3);
+  width: 400px;
+  padding: 40px;
+  text-align: center;
+}
+
+/* 🌸 REGISTRO */
+.registro-container {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.3);
+  width: 400px;
+  padding: 40px;
+  text-align: center;
+}
+
+/* 🌸 CUENTA */
+.cuenta-container {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+  width: 400px;
+  padding: 40px;
+  text-align: center;
+}
+
+.info-cuenta {
+  background-color: #ffe6f2;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.info-cuenta p {
+  font-size: 16px;
+  color: #444;
+  margin: 8px 0;
+}
+
+/* 🌸 TRANSACCIONES */
+.transacciones-container {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+  width: 450px; /* antes 750px — lo bajamos para que se vea igual que cuenta */
+  padding: 30px;
+  text-align: center;
+  overflow: hidden;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  margin-bottom: 25px;
+  font-size: 14px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 th, td {
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #ffb6c1;
+  padding: 10px;
+  text-align: center;
 }
 
 th {
-  color: #e75480;
+  background-color: #ff1493;
+  color: white;
 }
 
-body {
-  background-color: #fde8ef; /* rosa clarito */
+tr:nth-child(even) {
+  background-color: #fff0f6;
+}
+
+tr:hover {
+  background-color: #ffd6eb;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.botones button {
+  flex: 1;
+}
+
+/* ===== ESTILOS LOGIN ===== */
+.login-body {
+  background-color: #ffe6f2;
   font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
-.container {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.login-container {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+  width: 90%;
+  max-width: 400px;
   text-align: center;
-  width: 350px;
 }
 
 .titulo {
-  color: #e74c78;
-  font-size: 24px;
+  color: #ff3399;
+  font-size: 2em;
   margin-bottom: 20px;
 }
 
-.bienvenida {
-  font-weight: bold;
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 10px;
+label {
+  display: block;
+  text-align: left;
+  color: #ff3399;
+  margin-bottom: 5px;
+  font-weight: 600;
 }
 
-.info-cuenta p {
-  margin: 8px 0;
+input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ffcce0;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #ff3399;
+  box-shadow: 0 0 8px rgba(255, 51, 153, 0.3);
+}
+
+.botones {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.btn-iniciar, .btn-cancelar {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn-iniciar {
+  background-color: #ff3399;
+  color: white;
+}
+
+.btn-iniciar:hover {
+  background-color: #ff66b2;
+  transform: scale(1.05);
+}
+
+.btn-cancelar {
+  background-color: #ff99cc;
+  color: white;
+}
+
+.btn-cancelar:hover {
+  background-color: #ffb3d9;
+  transform: scale(1.05);
+}
+
+.registro-texto {
+  margin-top: 20px;
   color: #444;
 }
 
-.acciones button {
-  background-color: #e74c78;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin: 10px 5px;
-  font-size: 14px;
-  transition: background-color 0.3s;
+.link-registro {
+  color: #ff3399;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.acciones button:hover {
-  background-color: #d53e6c;
+.link-registro:hover {
+  text-decoration: underline;
 }
+
+/* ===== ESTILOS REGISTRO ===== */
+.registro-body {
+  background-color: #ffe6f2;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.registro-container {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.titulo {
+  color: #ff3399;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  color: #ff3399;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ffcce0;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #ff3399;
+  box-shadow: 0 0 8px rgba(255, 51, 153, 0.3);
+}
+
+.botones {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.btn-registrar, .btn-cancelar {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn-registrar {
+  background-color: #ff3399;
+  color: white;
+}
+
+.btn-registrar:hover {
+  background-color: #ff66b2;
+  transform: scale(1.05);
+}
+
+.btn-cancelar {
+  background-color: #ff99cc;
+  color: white;
+}
+
+.btn-cancelar:hover {
+  background-color: #ffb3d9;
+  transform: scale(1.05);
+}
+
+.registro-texto {
+  margin-top: 20px;
+  color: #444;
+}
+
+.link-registro {
+  color: #ff3399;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.link-registro:hover {
+  text-decoration: underline;
+}
+
+/* Diseño responsive para celulares */
+@media (max-width: 480px) {
+  .login-container,
+  .registro-container,
+  .cuenta-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  input,
+  button {
+    font-size: 14px;
+  }
+
+  h1, h2 {
+    font-size: 1.5em;
+  }
+
+  .botones {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-iniciar,
+  .btn-registrar,
+  .btn-cancelar {
+    width: 100%;
+  }
+}
+
