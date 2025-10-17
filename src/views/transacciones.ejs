@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Transacciones de la cuenta</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <h1>💸 Transacciones de la cuenta <%= cuentaId %></h1>
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+
+  <table border="1" cellpadding="8">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tipo</th>
+        <th>Monto</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (transacciones.length > 0) { %>
+        <% transacciones.forEach(t => { %>
+          <tr>
+            <td><%= t.id %></td>
+            <td><%= t.tipo %></td>
+            <td><%= t.monto %></td>
+            <td><%= new Date(t.fecha).toLocaleString() %></td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr><td colspan="4">No hay transacciones registradas.</td></tr>
+      <% } %>
+    </tbody>
+  </table>
+
+  <h2>➕ Nueva transacción</h2>
+  <form action="/transacciones/crear" method="POST">
+    <input type="hidden" name="cuentaId" value="<%= cuentaId %>">
+
+    <label for="tipo">Tipo:</label>
+    <select name="tipo" required>
+      <option value="DEPOSITO">Depósito</option>
+      <option value="RETIRO">Retiro</option>
+    </select>
+
+    <label for="monto">Monto:</label>
+    <input type="number" name="monto" step="0.01" required>
+
+    <button type="submit">Guardar 💰</button>
+  </form>
+
+  <br>
+  <a href="/">🏠 Volver al inicio</a>
+</body>
+</html>

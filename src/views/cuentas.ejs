@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de Cuentas</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>🏦 Cuentas Bancarias</h1>
+
+  <a href="/cuentas/crear" class="btn">+ Crear nueva cuenta</a>
+
+  <% if (error) { %>
+    <p class="error"><%= error %></p>
+  <% } %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Usuario</th>
+        <th>Tipo</th>
+        <th>Saldo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% cuentas.forEach(cuenta => { %>
+        <tr>
+          <td><%= cuenta.id %></td>
+          <td><%= cuenta.usuarioId %></td>
+          <td><%= cuenta.tipoCuenta %></td>
+          <td>$<%= cuenta.saldo %></td>
+          <td>
+            <a href="/cuentas/<%= cuenta.id %>">Ver</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>

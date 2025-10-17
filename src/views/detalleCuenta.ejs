@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Detalle de Cuenta</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Cuenta #<%= cuenta.id %></h1>
+
+  <p><b>Usuario:</b> <%= cuenta.usuarioId %></p>
+  <p><b>Tipo:</b> <%= cuenta.tipoCuenta %></p>
+  <p><b>Saldo:</b> $<%= cuenta.saldo %></p>
+
+  <form action="/cuentas/<%= cuenta.id %>/actualizar" method="POST">
+    <h3>Actualizar saldo</h3>
+    <input type="number" name="saldo" placeholder="Nuevo saldo">
+    <button type="submit">Actualizar</button>
+  </form>
+
+  <a href="/cuentas">Volver</a>
+</body>
+</html>
