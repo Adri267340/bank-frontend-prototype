@@ -46,7 +46,7 @@
             <div class="card card-create">
               <div class="card-body">
                 <h5 class="card-title mb-3">Crear Nueva Cuenta</h5>
-                <form id="createAccountForm" novalidate>
+                <form action="/api/cuentas" method="post" id="createAccountForm" novalidate>
                   <div class="row g-2">
                     <div class="col-sm-4">
                       <label for="userId" class="form-label">Usuario ID</label>
@@ -58,8 +58,8 @@
                       <label for="tipoCuenta" class="form-label">Tipo de Cuenta</label>
                       <select class="form-select" id="tipoCuenta" name="tipoCuenta" required>
                         <option value="">Seleccionar...</option>
-                        <option value="Ahorro">Ahorro</option>
-                        <option value="Corriente">Corriente</option>
+                        <option value="Ahorro">AHORRO</option>
+                        <option value="Corriente">CORRIENTE</option>
                       </select>
                       <div class="invalid-feedback">Seleccione un tipo de cuenta.</div>
                     </div>
@@ -130,6 +130,7 @@
 
     <script id="serverAccountsData" type="application/json"><%- JSON.stringify(typeof accounts !== 'undefined' ? accounts : []) %></script>
 
+
     <script>
       // Inicializa datos desde servidor
       const serverAccounts = JSON.parse(document.getElementById('serverAccountsData').textContent || '[]');
@@ -187,7 +188,6 @@
           const userId = Number(document.getElementById('userId').value);
           const tipo = document.getElementById('tipoCuenta').value;
           const saldo = Number(document.getElementById('saldoInicial').value);
-
           if (!userId || !tipo || isNaN(saldo)) {
             showAlert('Datos incompletos o inválidos.', 'danger');
             return;

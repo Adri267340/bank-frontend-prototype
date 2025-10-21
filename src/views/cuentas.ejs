@@ -1,41 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Listado de Cuentas</title>
+  <meta charset="UTF-8">
+  <title>🏦 Cuentas Bancarias | Banco Adri</title>
   <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff5fa);
+      margin: 0;
+      padding: 0;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 25px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px 50px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #cc2b7b;
+      margin-bottom: 15px;
+      font-size: 2.2em;
+    }
+
+    .add-btn {
+      display: inline-block;
+      background-color: #ffb3d9;
+      color: #660033;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .add-btn:hover {
+      background-color: #ff99cc;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 25px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: center;
+      border-bottom: 1px solid #f3cce0;
+    }
+
+    th {
+      background-color: #ffe0f0;
+      color: #99004d;
+      text-transform: uppercase;
+      font-size: 0.9em;
+    }
+
+    tr:hover {
+      background-color: #fff0f8;
+    }
+
+    .actions a {
+      display: inline-block;
+      margin: 4px 6px;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-view {
+      background: #cce5ff;
+      color: #004085;
+    }
+
+    .btn-edit {
+      background: #ffe0b3;
+      color: #804000;
+    }
+
+    .btn-delete {
+      background: #ffcccc;
+      color: #800000;
+    }
+
+    .btn-transacciones {
+      background: #e0b3ff;
+      color: #4b0082;
+    }
+
+    .actions a:hover {
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+
+    .saldo {
+      color: #660033;
+      font-weight: 600;
+    }
+
+    .volver {
+      display: inline-block;
+      margin-top: 15px;
+      color: #cc2b7b;
+      font-size: 0.9em;
+      text-decoration: none;
+    }
+
+    .volver:hover {
+      text-decoration: underline;
+    }
+
+    .alert {
+      background-color: #ffe0f0;
+      border-left: 5px solid #ff66a3;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      color: #660033;
+      font-size: 0.9em;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-  <h1>🏦 Cuentas Bancarias</h1>
+  <div class="card">
+    <h1>🏦 Cuentas Bancarias</h1>
 
-  <a href="/cuentas/crear" class="btn">+ Crear nueva cuenta</a>
+    <a href="/cuentas/crear" class="add-btn">+ Crear nueva cuenta</a>
 
-  <% if (error) { %>
-    <p class="error"><%= error %></p>
-  <% } %>
+    <% if (error) { %>
+      <div class="alert"><%= error %></div>
+    <% } %>
 
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Usuario</th>
-        <th>Tipo</th>
-        <th>Saldo</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% cuentas.forEach(cuenta => { %>
+    <table>
+      <thead>
         <tr>
-          <td><%= cuenta.id %></td>
-          <td><%= cuenta.usuarioId %></td>
-          <td><%= cuenta.tipoCuenta %></td>
-          <td>$<%= cuenta.saldo %></td>
-          <td>
-            <a href="/cuentas/<%= cuenta.id %>">Ver</a>
-          </td>
+          <th>ID</th>
+          <th>Usuario</th>
+          <th>Tipo</th>
+          <th>Saldo</th>
+          <th>Acciones</th>
         </tr>
-      <% }) %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% if (cuentas.length > 0) { %>
+          <% cuentas.forEach(cuenta => { %>
+            <tr>
+              <td><%= cuenta.id %></td>
+              <td><%= cuenta.usuarioId %></td>
+              <td><%= cuenta.tipoCuenta %></td>
+              <td class="saldo">$<%= cuenta.saldo.toLocaleString() %></td>
+              <td class="actions">
+                <a href="/cuentas/<%= cuenta.id %>" class="btn-view">Ver</a>
+                <a href="/cuentas/<%= cuenta.id %>/editar" class="btn-edit">Editar</a>
+                <a href="/transacciones/cuenta/<%= cuenta.id %>" class="btn-transacciones">Transacciones</a>
+              </td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan="5">No hay cuentas registradas aún 🌸</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+    <a href="/" class="volver">🏠 Volver al inicio</a>
+  </div>
 </body>
 </html>

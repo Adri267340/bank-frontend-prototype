@@ -58,6 +58,22 @@ export async function crearCuenta(cuenta: CuentaRequest): Promise<CuentaResponse
 }
 
 export async function actualizarCuenta(id: number, cuenta: any) {
-  const response = await axios.put(`${API_URL}/${id}`, cuenta);
+  const response = await axios.delete(`${API_URL}/${id}`, cuenta);
   return response.data;
 }
+
+// 🗑️ Eliminar cuenta por ID
+export async function eliminarCuenta(id: number): Promise<void> {
+  try {
+    console.log(`🗑️ Eliminando cuenta con ID: ${id}`);
+    const response = await axios.delete(`${API_URL}/${id}`);
+    console.log("✅ Cuenta eliminada correctamente:", response.status);
+  } catch (error: any) {
+    console.error("❌ Error al eliminar cuenta:", {
+      mensaje: error.message,
+      detalles: error.response?.data,
+    });
+    throw new Error(error.response?.data?.message || "Error al eliminar la cuenta");
+  }
+}
+

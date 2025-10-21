@@ -1,22 +1,57 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Detalle de Cuenta</title>
-  <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-  <h1>Cuenta #<%= cuenta.id %></h1>
+<div class="d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 72px);">
+  <div class="card shadow-lg border-0 p-4" style="max-width: 480px; width: 100%; border-radius: 1.5rem; background: #fff5f9;">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold text-pink">💳 Detalle de Cuenta #<%= cuenta.id %></h2>
+    </div>
 
-  <p><b>Usuario:</b> <%= cuenta.usuarioId %></p>
-  <p><b>Tipo:</b> <%= cuenta.tipoCuenta %></p>
-  <p><b>Saldo:</b> $<%= cuenta.saldo %></p>
+    <% if (error) { %>
+      <div class="alert alert-danger text-center"><%= error %></div>
+    <% } %>
 
-  <form action="/cuentas/<%= cuenta.id %>/actualizar" method="POST">
-    <h3>Actualizar saldo</h3>
-    <input type="number" name="saldo" placeholder="Nuevo saldo">
-    <button type="submit">Actualizar</button>
-  </form>
+    <div class="p-3 rounded mb-4" style="background: #ffe6f0;">
+      <p class="mb-2"><strong>👤 Usuario:</strong> <%= cuenta.usuarioId %></p>
+      <p class="mb-2"><strong>🏦 Tipo:</strong> <%= cuenta.tipoCuenta %></p>
+      <p class="mb-0"><strong>💰 Saldo actual:</strong> 
+        <span class="fw-bold text-success">$<%= cuenta.saldo.toLocaleString() %></span>
+      </p>
+    </div>
 
-  <a href="/cuentas">Volver</a>
-</body>
-</html>
+    <!-- 🧾 Actualizar saldo -->
+    <form action="/cuentas/<%= cuenta.id %>/actualizar" method="POST" class="mb-3">
+      <div class="mb-3 text-start">
+        <label for="saldo" class="form-label fw-semibold text-pink">Actualizar saldo</label>
+        <input 
+          type="number" 
+          name="saldo" 
+          id="saldo" 
+          class="form-control border-pink shadow-sm" 
+          placeholder="Ingrese nuevo saldo" 
+          required
+        />
+      </div>
+      <button type="submit" class="btn w-100 fw-semibold text-light shadow-sm" style="background-color: #e83e6b;">💾 Actualizar</button>
+    </form>
+
+    <!-- 🗑️ Eliminar cuenta -->
+    <form 
+      action="/cuentas/<%= cuenta.id %>/eliminar" 
+      method="POST" 
+      onsubmit="return confirm('¿Estás seguro de eliminar esta cuenta? 😢');"
+      class="mb-3"
+    >
+      <button type="submit" class="btn w-100 fw-semibold shadow-sm" style="background-color: #ffccd5; color:#990033;">🗑️ Eliminar Cuenta</button>
+    </form>
+
+    <!-- 📜 Ver transacciones -->
+    <a href="/transacciones/cuenta/<%= cuenta.id %>" 
+       class="btn w-100 fw-semibold mb-3 shadow-sm" 
+       style="background-color: #ffb3d9; color:#660033;">
+       📜 Ver Transacciones
+    </a>
+
+    <!-- ⬅️ Volver -->
+    <a href="/cuentas" class="btn w-100 fw-semibold shadow-sm" style="background-color:#f8d7e5; color:#cc2b7b;">
+      ⬅️ Volver al listado
+    </a>
+  </div>
+</div>

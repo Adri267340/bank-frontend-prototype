@@ -6,60 +6,32 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <h1>Crear Nueva Cuenta</h1>
 
   <% if (error) { %>
     <p style="color: red;"><%= error %></p>
   <% } %>
 
- <form action="/cuentas/crear" method="POST" class="needs-validation" novalidate>
-  <div class="mb-3">
-    <label class="form-label">Usuario ID</label>
-    <input 
-      type="number" 
-      name="usuarioId"
-      class="form-control" 
-      required
-      min="1"
-    >
-    <div class="invalid-feedback">
-      Ingrese un ID de usuario válido
-    </div>
-  </div>
-  
-  <div class="mb-3">
-    <label class="form-label">Tipo de Cuenta</label>
-    <select name="tipoCuenta" class="form-select" required>
-      <option value="">Seleccionar...</option>
-      <option value="AHORRO">Ahorro</option>
-      <option value="CORRIENTE">Corriente</option>
-    </select>
-    <div class="invalid-feedback">
-      Seleccione un tipo de cuenta
-    </div>
-  </div>
-  
-  <div class="mb-3">
-    <label class="form-label">Saldo Inicial</label>
-    <input 
-      type="number" 
-      name="saldoInicial"
-      class="form-control" 
-      required
-      min="0"
-      step="0.01"
-    >
-    <div class="invalid-feedback">
-      Ingrese un saldo inicial válido
-    </div>
-  </div>
+  <div class="form-wrapper">
+  <div class="form-card">
+    <h1>Crear Nueva Cuenta</h1>
 
-  <button type="submit" class="btn btn-success">
-    <i class="bi bi-plus-circle me-1"></i>
-    Crear Cuenta
-  </button>
-</form>
+ <form action="/cuentas/crear" method="POST">
+ <label for="usuarioId">Usuario ID</label>
+ <input type="number" id="usuarioId" name="usuarioId" placeholder="Ingrese un ID valido"required>
 
-  <a href="/cuentas">Volver al listado</a>
+  <label for="tipoCuenta">Tipo de Cuenta</label>
+  <select id="tipoCuenta" name="tipoCuenta" required>
+    <option value="">Seleccione un tipo</option>
+    <option value="AHORRO">Ahorro</option>
+    <option value="CORRIENTE">Corriente</option>
+  </select>
+  <label for="saldoInicial">Saldo Inicial</label>
+  <input type="number" id="saldoInicial" name="saldoInicial" placeholder="Ingrese el saldo inicial" required>
+
+  <button type="submit" class="btn">Crear Cuenta</button>
+ </form>
+
+ <a href="/cuentas" class="Volver">Volver al listado</a>
+ </div>
 </body>
 </html>
