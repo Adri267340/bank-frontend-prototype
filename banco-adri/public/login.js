@@ -18,7 +18,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   if (usuario) {
     alert(`Inicio de sesión exitoso Bienvenido/a ${usuario.nombre} 💖`);
     localStorage.setItem("usuarioActivo", JSON.stringify(usuario)); // Guarda sesión
-    window.location.href = "index.html";
+    window.location.href = "cuenta.html";
   } else {
     alert("Correo o contraseña incorrectos ❌");
   }

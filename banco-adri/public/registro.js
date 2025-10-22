@@ -28,9 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const nuevoUsuario = { nombre, correo, password };
-    usuarios.push(nuevoUsuario);
+    const nuevoUsuario = {
+      nombre,
+      correo,
+      password,
+      numeroCuenta: Date.now(), // número único generado automáticamente
+      tipoCuenta: "Ahorros",
+      saldo: "$0" // saldo inicial
+    };
 
+    usuarios.push(nuevoUsuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     alert("¡Registro exitoso! 🎉 Ahora puedes iniciar sesión.");

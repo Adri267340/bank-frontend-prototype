@@ -172,12 +172,30 @@ tr:hover {
 
 .botones {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: center;  /* 🔹 centramos los botones */
+  gap: 12px;                /* 🔹 espacio igual entre ellos */
+  flex-wrap: wrap;          /* 🔹 por si se reduce la pantalla, no se desbordan */
+  margin-top: 15px;
 }
 
 .botones button {
-  flex: 1;
+  background-color: #ff1493;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;     /* 🔹 más redonditos */
+  padding: 10px 16px;      /* 🔹 tamaño justo */
+  font-size: 14px;         /* 🔹 texto equilibrado */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;        /* 🔹 todos iguales */
+  text-align: center;
+}
+
+
+.botones button:hover {
+  background-color: #ff66b2;
+  transform: scale(1.05);
 }
 
 /*ESTILOS LOGIN*/
@@ -408,5 +426,6 @@ input:focus {
   .btn-cancelar {
     width: 100%;
   }
+  
 }
 

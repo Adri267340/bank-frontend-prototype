@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historial de Transacciones</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="transacciones-container">
+    <h1>Historial de Transacciones 💼</h1>
+
+    <div class="info-cuenta">
+      <p><strong>Titular:</strong> <span id="nombreUsuario"></span></p>
+      <p><strong>Número de cuenta:</strong> <span id="numeroCuenta"></span></p>
+      <p><strong>Saldo actual:</strong> <span id="saldoActual"></span></p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Monto</th>
+        </tr>
+      </thead>
+      <tbody id="listaTransacciones">
+        <!-- Aquí van las filas automáticas -->
+      </tbody>
+    </table>
+
+    <div class="botones">
+      <button id="volverCuenta">Volver</button>
+      <button id="cerrarSesion">Cerrar sesión</button>
+    </div>
+  </div>
+
+  <script src="js/transacciones.js"></script>
+</body>
+</html>
