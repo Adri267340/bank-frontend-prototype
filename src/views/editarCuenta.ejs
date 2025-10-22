@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crear Nueva Cuenta</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <div class="form-card">
+  <h1>Editar Cuenta</h1>
+
+  <% if (error) { %>
+    <p style="color:red"><%= error %></p>
+  <% } %>
+
+  <form action="/cuentas/<%= cuenta.id %>/actualizar" method="POST">
+    <label for="usuarioId">Usuario ID</label>
+    <input type="number" name="usuarioId" value="<%= cuenta.usuarioId %>" readonly />
+
+    <label for="tipoCuenta">Tipo de Cuenta</label>
+    <input type="text" name="tipoCuenta" value="<%= cuenta.tipoCuenta %>" readonly />
+
+    <label for="saldo">Saldo Actual</label>
+    <input type="number" name="saldo" value="<%= cuenta.saldoInicial %>" step="0.01" required />
+
+    <button type="submit" class="btn">Actualizar</button>
+  </form>
+
+  <a href="/cuentas" class="volver">Volver al listado</a>
+</div>
+</body>
+</html>

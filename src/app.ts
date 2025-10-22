@@ -3,6 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import path from "path";
 import cuentasRouter from "./routes/cuentas.routes";
+import transaccionesRoutes from "./routes/transacciones.routes";
 import { errorHandler } from "./middlewares/errorHandler";
 
 // Cargar variables de entorno desde el archivo .env
@@ -26,6 +27,7 @@ app.set("views", path.join(__dirname, "views"));
 
 // 🚀 Rutas principales
 app.use("/cuentas", cuentasRouter);
+app.use("/transacciones", transaccionesRoutes);
 
 // 🌐 Página principal
 app.get("/", (req, res) => {

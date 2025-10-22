@@ -1,111 +1,144 @@
+/* 🌸 ESTILOS GENERALES */
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-  color: #333;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, #ffe6f0, #fff5fa);
   margin: 0;
   padding: 0;
-}
 
-header {
-  background: linear-gradient(90deg, #e91e63, #ad1457);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-.container {
-  width: 90%;
-  max-width: 900px;
-  margin: 30px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-h2 {
-  color: #ad1457;
-  margin-bottom: 15px;
-}
-
-.account-form {
+  /* Centramos todo el contenido */
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-input, select {
+/* 🌸 TARJETA DETALLE DE CUENTA */
+.form-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(204, 43, 123, 0.2);
+  padding: 40px 50px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  animation: aparecer 0.5s ease-in-out;
+}
+
+/* 🌸 ANIMACIÓN SUAVE */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌸 TÍTULO */
+h1 {
+  color: #cc2b7b;
+  font-size: 1.8em;
+  margin-bottom: 25px;
+}
+
+/* 🌸 DETALLE INFO */
+.detalle-info {
+  text-align: left;
+  background: #fff0f7;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  color: #660033;
+}
+
+.detalle-info p {
+  margin: 8px 0;
+  font-size: 1em;
+}
+
+/* 🌸 FORMULARIOS */
+form {
+  margin-top: 15px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  color: #660033;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
+  border: 1px solid #ffcce0;
+  border-radius: 10px;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.3s;
+  margin-bottom: 12px;
 }
 
+input:focus {
+  border-color: #ff80b3;
+}
+
+/* 🌸 BOTONES */
 .btn {
-  background: linear-gradient(90deg, #ec407a, #d81b60);
-  color: white;
-  border: none;
+  display: inline-block;
+  width: 100%;
+  background-color: #ffb3d9;
+  color: #660033;
   padding: 10px 15px;
-  border-radius: 6px;
+  border-radius: 10px;
+  border: none;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-weight: 600;
+  transition: background 0.3s;
+  margin-bottom: 10px;
 }
 
 .btn:hover {
-  background: linear-gradient(90deg, #f06292, #e91e63);
+  background-color: #ff99cc;
 }
 
-.table-section {
-  margin-top: 40px;
+/* 🌸 BOTÓN ELIMINAR */
+.btn.eliminar {
+  background-color: #ffccd5;
+  color: #990033;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+.btn.eliminar:hover {
+  background-color: #ff99aa;
 }
 
-th, td {
-  border-bottom: 1px solid #eee;
-  padding: 10px;
-  text-align: center;
-}
-
-th {
-  background-color: #fce4ec;
-  color: #ad1457;
-}
-
-tr:hover {
-  background-color: #f9f9f9;
-}
-
-.delete-btn {
-  background: #f06292;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.delete-btn:hover {
-  background: #e91e63;
-}
-
-.btn-home {
+/* 🌸 ENLACE VOLVER */
+.volver {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 15px;
+  color: #cc2b7b;
+  font-size: 0.9em;
   text-decoration: none;
-  background: linear-gradient(90deg, #ec407a, #d81b60);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 6px;
-  transition: background 0.3s;
 }
 
-.btn-home:hover {
-  background: linear-gradient(90deg, #f06292, #e91e63);
+.volver:hover {
+  text-decoration: underline;
 }
+ 
+.update-form,
+.delete-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.update-form .btn,
+.delete-form .btn {
+  width: 100%;
+  max-width: 250px;
+}
+
+.centrado-pantalla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 72px);
+}
+
