@@ -1,0 +1,126 @@
+ body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff5fa);
+      margin: 0;
+      padding: 0;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 25px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px 50px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #cc2b7b;
+      margin-bottom: 15px;
+      font-size: 2.2em;
+    }
+
+    .add-btn {
+      display: inline-block;
+      background-color: #ffb3d9;
+      color: #660033;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .add-btn:hover {
+      background-color: #ff99cc;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 25px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: center;
+      border-bottom: 1px solid #f3cce0;
+    }
+
+    th {
+      background-color: #ffe0f0;
+      color: #99004d;
+      text-transform: uppercase;
+      font-size: 0.9em;
+    }
+
+    tr:hover {
+      background-color: #fff0f8;
+    }
+
+    .actions a {
+      display: inline-block;
+      margin: 4px 6px;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-view {
+      background: #cce5ff;
+      color: #004085;
+    }
+
+    .btn-edit {
+      background: #ffe0b3;
+      color: #804000;
+    }
+
+    .btn-delete {
+      background: #ffcccc;
+      color: #800000;
+    }
+
+    .btn-transacciones {
+      background: #e0b3ff;
+      color: #4b0082;
+    }
+
+    .actions a:hover {
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+
+    .saldo {
+      color: #660033;
+      font-weight: 600;
+    }
+
+    .volver {
+      display: inline-block;
+      margin-top: 15px;
+      color: #cc2b7b;
+      font-size: 0.9em;
+      text-decoration: none;
+    }
+
+    .volver:hover {
+      text-decoration: underline;
+    }
+
+    .alert {
+      background-color: #ffe0f0;
+      border-left: 5px solid #ff66a3;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      color: #660033;
+      font-size: 0.9em;
+      text-align: left;
+    }
