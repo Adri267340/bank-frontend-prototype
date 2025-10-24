@@ -1,0 +1,81 @@
+.detalle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  background: linear-gradient(to bottom right, #ffe6f0, #fff5fa);
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  background: #fff5f9;
+  border-radius: 1.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+h2 {
+  color: #cc2b7b;
+  margin-bottom: 1rem;
+}
+
+.info {
+  background: #ffe6f0;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.alert {
+  background-color: #ffe0f0;
+  border-left: 5px solid #ff66a3;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  color: #660033;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ffb3d9;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.btn-guardar {
+  background-color: #e83e6b;
+  color: white;
+}
+
+.btn-eliminar {
+  background-color: #ffccd5;
+  color: #990033;
+}
+
+.btn-transacciones {
+  background-color: #ffb3d9;
+  color: #660033;
+}
+
+.btn-volver {
+  background-color: #f8d7e5;
+  color: #cc2b7b;
+}
